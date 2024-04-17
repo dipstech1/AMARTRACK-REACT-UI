@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -9,19 +9,33 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 
 function App() {
+  const [scrolltopdata, setscrolltopdata] = useState(false);
+
   useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      once: true,
+      AOS.init({
+        duration: 1200,
+        once: true,
+      });
+      AOS.refresh();
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY < 15) {
+            setscrolltopdata(false);
+        } else {
+            setscrolltopdata(true);
+        }
     });
-    AOS.refresh();
+
   }, []);
+
   return (
     <>
 
-      <Header />
+      <Header isScrolled = {scrolltopdata} />
+      <div>
+        <Home />
 
-      <Home />
+      </div>
 
       <Footer />
     </>
