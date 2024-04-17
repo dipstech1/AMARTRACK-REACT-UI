@@ -7,7 +7,7 @@ import icon5Img from '../assets/img/icon5.svg';
 
 const Services = () => {
   return (
-    <section className="services-sec common-gap" id="services">
+    <section className="services-sec common-gap" data-section id="services">
         <div className="container">
           <div className="cmn-hdr text-center" data-aos="fade-down">
             <h2>Our <span>Services</span></h2>

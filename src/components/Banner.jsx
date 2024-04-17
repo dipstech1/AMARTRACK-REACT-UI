@@ -3,7 +3,7 @@ import bannerImg from '../assets/img/banner-img.png';
 
 const Banner = () => {
   return (
-    <section className="banner-sec" id='heroSec'>
+    <section className="banner-sec" data-section id='heroSec'>
     <div className="container">
       <div className="row align-items-center">
         <div className="col-md-6">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import SweetAlert2 from 'react-sweetalert2';
 
 const Contact = () => {
@@ -32,11 +32,12 @@ const Contact = () => {
       email: "",
       subject: "",
       message: ""
-    })
+    });
+
   }
 
   return (
-    <section className="contact-sec back common-gap" id="contactus">
+    <section className="contact-sec back common-gap" data-section id="contactus">
       <div className="container">
         <div className="cmn-hdr text-center" data-aos="fade-down">
           <h2><span>Contact</span> Us</h2>
@@ -106,6 +107,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+   
       <SweetAlert2 {...swalProps} />
     </section>
   )

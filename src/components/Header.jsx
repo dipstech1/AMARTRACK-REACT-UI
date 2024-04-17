@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import collapseLogo from '../assets/img/collapse-logo.png';
 import logoImg from '../assets/img/logo.svg';
@@ -15,10 +15,12 @@ const Header = ({ isScrolled }) => {
     { href: "#contactus", title: "Contact Us", isActive: false },
   ])
 
+  const [activeSection, setActiveSection] = useState(null);
+  const observer = useRef(null);
+
   let sticky = isScrolled ? 'sticky' : '';
 
-  const selectedMenu = (menu, id) => {
-
+  const setActiveMenu = (id) => {
     menus.forEach((m) => {
       m.isActive = false;
     });
@@ -31,8 +33,42 @@ const Header = ({ isScrolled }) => {
     if(navMenu.classList.contains('show')){
       navMenu.classList.remove('show')
     }
+  }
+
+  const selectedMenu = (menu, id) => {
+
+    setActiveMenu(id)
 
   }
+
+  useEffect(()=>{
+      if(activeSection){
+          let ind = menus.findIndex(m => m.href == `#${activeSection}`);
+          setActiveMenu(ind)
+      }
+  },[activeSection])
+
+ 
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver((entries) => {
+      const visibleSection = entries.find((entry) => entry.isIntersecting)?.target;
+      if (visibleSection) {
+        setActiveSection(visibleSection.id);
+      }
+    });
+
+    const sections = document.querySelectorAll('[data-section]');
+
+    sections.forEach((section) => {
+      observer.current.observe(section);
+    });
+    return () => {
+      sections.forEach((section) => {
+        observer.current.unobserve(section);
+      });
+    };
+  }, []);
 
 
 
@@ -47,6 +83,7 @@ const Header = ({ isScrolled }) => {
             <span className="navbar-toggler-icon"><img src={collapseLogo} alt="" /></span>
           </button>
           <div className="collapse navbar-collapse" id="navbar-menu">
+           AS {activeSection}
             <ul className="navbar-nav m-auto">
               {
                 menus.map((menu, id) => (

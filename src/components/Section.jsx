@@ -3,7 +3,7 @@ import aboutImg from '../assets/img/about-img.jpg';
 
 const AboutSection = () => {
   return (
-    <section className="about-sec back common-gap" id='aboutSec'>
+    <section className="about-sec back common-gap" data-section id='aboutSec'>
         <div className="container">
           <div className="cmn-hdr text-center" data-aos="fade-down">
             <h2><span>About</span> Us</h2>
