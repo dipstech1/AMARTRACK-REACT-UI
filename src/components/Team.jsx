@@ -4,7 +4,7 @@ import teamImg from '../assets/img/team-img.png';
 
 const Team = () => {
   return (
-    <section className="team-sec common-gap">
+    <section className="team-sec common-gap" id="team">
     <div className="container">
       <div className="cmn-hdr text-center" data-aos="fade-down">
         <h2>Meet <span> Our Team</span></h2>

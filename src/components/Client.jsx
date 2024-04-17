@@ -16,7 +16,7 @@ const Client = () => {
     arrows: false
   };
   return (
-    <section className="clients-sec back common-gap">
+    <section className="clients-sec back common-gap" id="testimonial">
     <div className="container">
       <div className="cmn-hdr text-center" data-aos="fade-down">
         <h2>Happy <span>Clients</span></h2>

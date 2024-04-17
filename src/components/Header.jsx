@@ -4,9 +4,32 @@ import collapseLogo from '../assets/img/collapse-logo.png';
 import logoImg from '../assets/img/logo.svg';
 
 
-const Header = ({isScrolled}) => {
+const Header = ({ isScrolled }) => {
 
-  let sticky = isScrolled ? 'sticky' : ''
+  let [menus, setMenus] = useState([
+    { href: "#heroSec", title: "Home", isActive: true },
+    { href: "#aboutSec", title: "About Us", isActive: false },
+    { href: "#services", title: "Services", isActive: false },
+    { href: "#testimonial", title: "Testimonials", isActive: false },
+    { href: "#team", title: "Our Team", isActive: false },
+    { href: "#contactus", title: "Contact Us", isActive: false },
+  ])
+
+  let sticky = isScrolled ? 'sticky' : '';
+
+  const selectedMenu = (menu, id) => {
+
+    menus.forEach((m) => {
+      m.isActive = false;
+    });
+
+    menus[id].isActive = true;
+
+    setMenus([...menus])
+
+  }
+
+
 
   return (
     <header className={`header ${sticky}`}>
@@ -20,13 +43,14 @@ const Header = ({isScrolled}) => {
           </button>
           <div className="collapse navbar-collapse" id="navbar-menu">
             <ul className="navbar-nav m-auto">
-              <li className="nav-item current-menu-item"><a href="#heroSec" className="nav-link">Home</a></li>
-              <li className="nav-item"><a href="#aboutSec" className="nav-link">About Us</a></li>
-              <li className="nav-item"><a href="#" className="nav-link">Services</a></li>
-              <li className="nav-item"><a href="#" className="nav-link">Testimonials</a></li>
-              <li className="nav-item"><a href="#" className="nav-link">Our Team</a></li>
-              <li className="nav-item"><a href="#" className="nav-link">Our Story</a></li>
-              <li className="nav-item"><a href="#" className="nav-link">Contact Us</a></li>
+              {
+                menus.map((menu, id) => (
+                  <li key={menu.href} onClick={() => selectedMenu(menu, id)} className={`nav-item ${menu.isActive ? 'current-menu-item' : ''}`}>
+                    <a href={menu.href} className="nav-link">{menu.title}</a>
+                  </li>
+                ))
+              }
+
             </ul>
           </div>
           <div className="header-right">
