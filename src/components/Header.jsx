@@ -83,7 +83,6 @@ const Header = ({ isScrolled }) => {
             <span className="navbar-toggler-icon"><img src={collapseLogo} alt="" /></span>
           </button>
           <div className="collapse navbar-collapse" id="navbar-menu">
-           AS {activeSection}
             <ul className="navbar-nav m-auto">
               {
                 menus.map((menu, id) => (
