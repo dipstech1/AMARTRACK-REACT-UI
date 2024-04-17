@@ -140,7 +140,7 @@
                 &:hover , &:focus {
                     color: $color-a8;
                     @media only screen and (max-width: 767px) {
-                        color: $color-47;
+                        color: #fff;
                     }
                     &:after {
                         width: 100%;

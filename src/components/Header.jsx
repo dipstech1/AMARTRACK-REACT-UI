@@ -25,7 +25,12 @@ const Header = ({ isScrolled }) => {
 
     menus[id].isActive = true;
 
-    setMenus([...menus])
+    setMenus([...menus]);
+
+    let navMenu = document.querySelector("#navbar-menu");
+    if(navMenu.classList.contains('show')){
+      navMenu.classList.remove('show')
+    }
 
   }
 
