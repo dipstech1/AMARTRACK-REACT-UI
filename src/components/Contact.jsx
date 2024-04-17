@@ -9,7 +9,7 @@ const Contact = () => {
       </div>
       <div className="row contact-otr align-items-center">
         <div className="col-lg-6">
-          <div data-aos="fade-up-right">
+          <div data-aos="fade-up-right contactText" style={{paddingLeft:"150px"}}>
             <h3>Let’s talk.</h3>
             <p className="sub-para">Lorem ipsum dolor sit amet consectetur. Nisi fringilla a sit ut. Urna odio in pretium magna convallis malesuada adipiscing feugiat. Sit ipsum egestas integer eget.</p>
             <ul className="contact-details">

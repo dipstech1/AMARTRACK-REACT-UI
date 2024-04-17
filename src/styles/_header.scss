@@ -97,7 +97,7 @@
                 a {
                     color: $color-a8;
                     @media only screen and (max-width: 767px) {
-                        color: $color-47;
+                        color: #fff;
                     }
                     &:after {
                         width: 100%;
@@ -134,7 +134,7 @@
                     background: $color-a8;
                     transition: all 0.6s;
                     @media only screen and (max-width: 767px) {
-                        background: $color-47;
+                        background: #fff;
                     }
                 }
                 &:hover , &:focus {
@@ -197,7 +197,7 @@
         left: 0;
         right: 0;
         top: 100%;
-        background: $color-a8;
+        background: $color-47;
         padding: 15px;
         z-index: 999;
     }

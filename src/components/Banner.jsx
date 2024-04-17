@@ -3,7 +3,7 @@ import bannerImg from '../assets/img/banner-img.png';
 
 const Banner = () => {
   return (
-    <section className="banner-sec">
+    <section className="banner-sec" id='heroSec'>
     <div className="container">
       <div className="row align-items-center">
         <div className="col-md-6">
@@ -14,7 +14,7 @@ const Banner = () => {
           </div>
         </div>
         <div className="col-md-6">
-          <figure className="banner-pic" data-aos="fade-left" data-aos-delay="400"><img className="w-100" src={bannerImg} alt="" /></figure>
+          <div className="banner-pic" data-aos="fade-left" data-aos-delay="400"><img className="w-100" src={bannerImg} alt="" /></div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 .btn {
     border: 1px solid transparent;
     font-size: 20px;
-    background:$color-a8;
+    background:$color-47;
     color: $color-ff;
     @extend .inline-flex-center;
     line-height: 0.8;
@@ -38,9 +38,9 @@
     }
     &:hover,&:focus {
         color: $color-ff;
-        border-color: $color-47;
+        border-color: $color-a8;
         &:after {
-            background:$color-47;
+            background:$color-a8;
             // background: rgba($color-a8, 0.2);
             height: 100%;
             opacity: 1;
@@ -51,7 +51,7 @@
         border-color: $color-47;
         color: $color-47;
         background: transparent;
-        text-shadow: 0 4px 4px rgba(0,0,0,0.25);
+        /* text-shadow: 0 4px 4px rgba(0,0,0,0.25); */
         &:hover,&:focus {
             color: $color-ff;
             border-color: $color-47;

@@ -20,8 +20,8 @@ const Header = ({isScrolled}) => {
           </button>
           <div className="collapse navbar-collapse" id="navbar-menu">
             <ul className="navbar-nav m-auto">
-              <li className="nav-item current-menu-item"><a href="#" className="nav-link">Home</a></li>
-              <li className="nav-item"><a href="#" className="nav-link">About Us</a></li>
+              <li className="nav-item current-menu-item"><a href="#heroSec" className="nav-link">Home</a></li>
+              <li className="nav-item"><a href="#aboutSec" className="nav-link">About Us</a></li>
               <li className="nav-item"><a href="#" className="nav-link">Services</a></li>
               <li className="nav-item"><a href="#" className="nav-link">Testimonials</a></li>
               <li className="nav-item"><a href="#" className="nav-link">Our Team</a></li>
@@ -30,7 +30,7 @@ const Header = ({isScrolled}) => {
             </ul>
           </div>
           <div className="header-right">
-            <a href="#" className="btn">Sign Up </a>
+            <a href="#" className="btn btn-outline-primary">Sign Up </a>
           </div>
         </nav>
       </div>

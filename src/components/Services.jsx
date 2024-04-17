@@ -14,35 +14,35 @@ const Services = () => {
             <p>5 Fundamental principles of education system</p>
           </div>
           <div className="services-wrapper">
-            <div className="services-innr" data-aos="fade-up" data-aos-delay="200">
+            <div className="services-innr" data-aos="fade-down" data-aos-delay="200">
               <div className="service-box">
                 <span className="serv-icon"><img src={icon1Img} alt="" /></span>
                 <h4>School & College ERP Solutions</h4>
                 <p>Integrated School and College ERP solutions streamline administrative tasks, enhance communication, and facilitate efficient management of academic processes for seamless educational operations.</p>
               </div>
             </div>
-            <div className="services-innr" data-aos="fade-up" data-aos-delay="300">
+            <div className="services-innr" data-aos="fade-down" data-aos-delay="400">
               <div className="service-box">
                 <span className="serv-icon"><img src={icon2Img} alt="" /></span>
                 <h4>University ERP</h4>
                 <p>University ERP systems provide comprehensive management solutions, integrating academic, administrative, and financial functions for efficient and organized campus operations.</p>
               </div>
             </div>
-            <div className="services-innr" data-aos="fade-up" data-aos-delay="400">
+            <div className="services-innr" data-aos="fade-down" data-aos-delay="600">
               <div className="service-box">
                 <span className="serv-icon"><img src={icon3Img} alt="" /></span>
                 <h4>Recruiter ERP</h4>
                 <p>Recruiter ERP solutions optimize hiring processes by automating recruitment tasks, enhancing candidate tracking, and providing data-driven insights for effective talent management.</p>
               </div>
             </div>
-            <div className="services-innr" data-aos="fade-up" data-aos-delay="500">
+            <div className="services-innr" data-aos="fade-down" data-aos-delay="800">
               <div className="service-box">
                 <span className="serv-icon"><img src={icon4Img} alt="" /></span>
                 <h4>EHR</h4>
                 <p>Electronic Health Records (EHR) digitally centralize patient information, improving healthcare coordination, accessibility, and decision-making for enhanced patient care.</p>
               </div>
             </div>
-            <div className="services-innr" data-aos="fade-up" data-aos-delay="600">
+            <div className="services-innr" data-aos="fade-down" data-aos-delay="1000">
               <div className="service-box">
                 <span className="serv-icon"><img src={icon5Img} alt="" /></span>
                 <h4>AMSAT Standardized Test</h4>
