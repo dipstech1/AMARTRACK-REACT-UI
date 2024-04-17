@@ -1,0 +1,54 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inline-flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.object-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.after {
+    position: absolute;
+    content: '';
+}
+.bottom-line {
+    position: relative;
+    z-index: 1;
+    &:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        right: 0;
+        bottom: 9px;
+        z-index: -1;
+        height: 16px;
+        width: 100%;
+        background: rgba(181,33,84,0.4);
+        @media only screen and (max-width: 1499px) {
+            height: 11px;
+        }
+        @media only screen and (max-width: 991px) {
+            height: 8px;
+            bottom: 7px;
+        }
+    }
+}
