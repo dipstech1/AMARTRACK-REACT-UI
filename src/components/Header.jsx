@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 
 import collapseLogo from '../assets/img/collapse-logo.png';
 import logoImg from '../assets/img/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Header = ({ isScrolled }) => {
@@ -13,8 +13,11 @@ const Header = ({ isScrolled }) => {
     { href: "#services", title: "Services", isActive: false },
     { href: "#testimonial", title: "Testimonials", isActive: false },
     { href: "#team", title: "Our Team", isActive: false },
-    { href: "#contactus", title: "Contact Us", isActive: false }
+    { href: "#contactus", title: "Contact Us", isActive: false },
+    { href: "our-story", title: "Our Story", isActive: false }
   ])
+
+  const navigate = useNavigate()
 
   const [activeSection, setActiveSection] = useState(null);
   const observer = useRef(null);
@@ -34,11 +37,15 @@ const Header = ({ isScrolled }) => {
     if(navMenu.classList.contains('show')){
       navMenu.classList.remove('show')
     }
+    
   }
 
   const selectedMenu = (menu, id) => {
 
-    setActiveMenu(id)
+    setActiveMenu(id );
+    if(menu.href == 'our-story'){
+      navigate("/our-story")
+    }
 
   }
 
@@ -93,7 +100,7 @@ const Header = ({ isScrolled }) => {
                 ))
               }
               <li>
-                <Link to="our-story" target='_blank'>Our Story</Link>
+                {/* <Link to="our-story" target='_blank'>Our Story</Link> */}
               </li>
 
             </ul>
