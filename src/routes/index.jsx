@@ -28,12 +28,12 @@ export default function Router() {
       element: <OurStoryIndex />,
     },
     {
-      path: "/home",
+      path: "/",
       element: <HomeIndex />,
     },
     {
       path: "/",
-      element: <Navigate to={"/home"} replace />,
+      element: <Navigate to={"/"} replace />,
     },
 
     { path: "*", element: <Navigate to="/" replace /> },

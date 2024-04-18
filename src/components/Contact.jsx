@@ -25,6 +25,7 @@ const Contact = () => {
       show: true,
       title: 'Form Submitted',
       text: 'Email sent',
+      confirmButtonColor: "#aa240C",
     });
     setContactForm({
       name: "",
@@ -40,7 +41,7 @@ const Contact = () => {
     <section className="contact-sec back common-gap" data-section id="contactus">
       <div className="container">
         <div className="cmn-hdr text-center" data-aos="fade-down">
-          <h2><span>Contact</span> Us</h2>
+          <h2 onClick={submitForm}><span>Contact</span> Us</h2>
         </div>
         <div className="row contact-otr align-items-center">
           <div className="col-lg-6">

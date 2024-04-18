@@ -13,7 +13,7 @@ const Header = ({ isScrolled }) => {
     { href: "#services", title: "Services", isActive: false },
     { href: "#testimonial", title: "Testimonials", isActive: false },
     { href: "#team", title: "Our Team", isActive: false },
-    { href: "#contactus", title: "Contact Us", isActive: false },
+    { href: "#contactus", title: "Contact Us", isActive: false }
   ])
 
   const [activeSection, setActiveSection] = useState(null);
@@ -92,6 +92,9 @@ const Header = ({ isScrolled }) => {
                   </li>
                 ))
               }
+              <li>
+                <Link to="our-story" target='_blank'>Our Story</Link>
+              </li>
 
             </ul>
           </div>
