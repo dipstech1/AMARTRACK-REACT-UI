@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Router from './routes'
 
 function App() {
   const [scrolltopdata, setscrolltopdata] = useState(false);
@@ -33,7 +34,7 @@ function App() {
 
       <Header isScrolled = {scrolltopdata} />
       <div>
-        <Home />
+      <Router />
 
       </div>
 

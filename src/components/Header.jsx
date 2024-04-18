@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 
 import collapseLogo from '../assets/img/collapse-logo.png';
 import logoImg from '../assets/img/logo.svg';
+import { Link } from 'react-router-dom';
 
 
 const Header = ({ isScrolled }) => {
@@ -76,9 +77,9 @@ const Header = ({ isScrolled }) => {
     <header className={`header ${sticky}`}>
       <div className="container">
         <nav className="navbar navbar-expand-md">
-          <a href="index.html" className="navbar-brand">
+          <Link to="/home" className="navbar-brand">
             <img src={logoImg} alt="" />
-          </a>
+          </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
             <span className="navbar-toggler-icon"><img src={collapseLogo} alt="" /></span>
           </button>
