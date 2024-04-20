@@ -40,11 +40,12 @@ const Header = ({ isScrolled }) => {
     
   }
 
-  const selectedMenu = (menu, id) => {
-
-    setActiveMenu(id );
+  const selectedMenu = (e,menu, id) => {
+    e?.stopPropagation()
+    setActiveMenu(id ); 
     if(menu.href == 'our-story'){
       navigate("/our-story")
+      // window.open("/our-story", "_blank");
     }
 
   }
@@ -52,7 +53,8 @@ const Header = ({ isScrolled }) => {
   useEffect(()=>{
       if(activeSection){
           let ind = menus.findIndex(m => m.href == `#${activeSection}`);
-          setActiveMenu(ind)
+          if(ind)
+            setActiveMenu(ind)
       }
   },[activeSection])
 
@@ -94,9 +96,13 @@ const Header = ({ isScrolled }) => {
             <ul className="navbar-nav m-auto">
               {
                 menus.map((menu, id) => (
-                  <li key={menu.href} onClick={() => selectedMenu(menu, id)} className={`nav-item ${menu.isActive ? 'current-menu-item' : ''}`}>
-                    <a href={menu.href} className="nav-link">{menu.title}</a>
+                   menu.href !== 'our-story' ? ( <li key={menu.href} onClick={(e) => selectedMenu(e,menu, id)} className={`nav-item ${menu.isActive ? 'current-menu-item' : ''}`}>
+                   <a href={menu.href} className="nav-link">{menu.title}</a>
+                 </li>):(
+                  <li className='nav-item'>
+                                      <Link to={menu.href} target='_blank' >{menu.title}</Link>
                   </li>
+                 )
                 ))
               }
               <li>

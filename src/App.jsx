@@ -19,26 +19,18 @@ function App() {
       });
       AOS.refresh();
 
-      window.addEventListener('scroll', () => {
-        if (window.scrollY < 15) {
-            setscrolltopdata(false);
-        } else {
-            setscrolltopdata(true);
-        }
-    });
+      
 
   }, []);
 
   return (
     <>
 
-      <Header isScrolled = {scrolltopdata} />
-      <div>
+      {/* <Header isScrolled = {scrolltopdata} /> */}
       <Router />
 
-      </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
