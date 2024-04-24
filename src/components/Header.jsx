@@ -8,12 +8,12 @@ import { Link, useNavigate } from 'react-router-dom';
 const Header = ({ isScrolled }) => {
 
   let [menus, setMenus] = useState([
-    { href: "#heroSec", title: "Home", isActive: true },
-    { href: "#aboutSec", title: "About Us", isActive: false },
-    { href: "#services", title: "Services", isActive: false },
-    { href: "#testimonial", title: "Testimonials", isActive: false },
-    { href: "#team", title: "Our Team", isActive: false },
-    { href: "#contactus", title: "Contact Us", isActive: false },
+    { scrollTo: "heroSec", href: "#heroSec", title: "Home", isActive: true },
+    { scrollTo: "aboutSec", href: "#aboutSec", title: "About Us", isActive: false },
+    { scrollTo: "services", href: "#services", title: "Services", isActive: false },
+    { scrollTo: "testimonial", href: "#testimonial", title: "Testimonials", isActive: false },
+    { scrollTo: "team", href: "#team", title: "Our Team", isActive: false },
+    { scrollTo: "contactus", href: "#contactus", title: "Contact Us", isActive: false },
     { href: "our-story", title: "Our Story", isActive: false }
   ])
 
@@ -24,7 +24,7 @@ const Header = ({ isScrolled }) => {
 
   let sticky = isScrolled ? 'sticky' : '';
 
-  const setActiveMenu = (id) => {
+  const setActiveMenu = (id, m) => {
     menus.forEach((m) => {
       m.isActive = false;
     });
@@ -34,31 +34,34 @@ const Header = ({ isScrolled }) => {
     setMenus([...menus]);
 
     let navMenu = document.querySelector("#navbar-menu");
-    if(navMenu.classList.contains('show')){
+    if (navMenu.classList.contains('show')) {
       navMenu.classList.remove('show')
     }
-    
+
+    let element = document.getElementById(m?.scrollTo);
+    element?.scrollIntoView({ behavior: "smooth", block: "start" });
+
   }
 
-  const selectedMenu = (e,menu, id) => {
+  const selectedMenu = (e, menu, id) => {
     e?.stopPropagation()
-    setActiveMenu(id ); 
-    if(menu.href == 'our-story'){
+    setActiveMenu(id, menu);
+    if (menu.href == 'our-story') {
       navigate("/our-story")
       // window.open("/our-story", "_blank");
     }
 
   }
 
-  useEffect(()=>{
-      if(activeSection){
-          let ind = menus.findIndex(m => m.href == `#${activeSection}`);
-          if(ind)
-            setActiveMenu(ind)
-      }
-  },[activeSection])
+  useEffect(() => {
+    if (activeSection) {
+      let ind = menus.findIndex(m => m.href == `#${activeSection}`);
+      if (ind)
+        setActiveMenu(ind)
+    }
+  }, [activeSection])
 
- 
+
 
   useEffect(() => {
     observer.current = new IntersectionObserver((entries) => {
@@ -66,6 +69,9 @@ const Header = ({ isScrolled }) => {
       if (visibleSection) {
         setActiveSection(visibleSection.id);
       }
+    }, {
+      rootMargin: '0px 0px -50% 0px',
+      threshold: 0.5
     });
 
     const sections = document.querySelectorAll('[data-section]');
@@ -96,13 +102,13 @@ const Header = ({ isScrolled }) => {
             <ul className="navbar-nav m-auto">
               {
                 menus.map((menu, id) => (
-                   menu.href !== 'our-story' ? ( <li key={menu.href} onClick={(e) => selectedMenu(e,menu, id)} className={`nav-item ${menu.isActive ? 'current-menu-item' : ''}`}>
-                   <a href={menu.href} className="nav-link">{menu.title}</a>
-                 </li>):(
-                  <li className='nav-item'>
-                                      <Link to={menu.href} target='_blank' >{menu.title}</Link>
-                  </li>
-                 )
+                  menu.href !== 'our-story' ? (<li key={menu.href} onClick={(e) => selectedMenu(e, menu, id)} className={`nav-item ${menu.isActive ? 'current-menu-item' : ''}`}>
+                    <a href={menu.href} className="nav-link">{menu.title}</a>
+                  </li>) : (
+                    <li className='nav-item'>
+                      <Link to={menu.href} target='_blank' >{menu.title}</Link>
+                    </li>
+                  )
                 ))
               }
               <li>
